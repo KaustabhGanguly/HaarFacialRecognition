@@ -1,2 +1,7 @@
-# HaarFacialRecognition
-Facial Recognition using HaarCascades 
+# Facial Recognition using Haar cascade 
+
+
+### <i>Object Detection using Haar feature-based cascade classifiers is an effective object detection method proposed by Paul Viola and Michael Jones in their paper, "Rapid Object Detection using a Boosted Cascade of Simple Features" in 2001. It is a machine learning based approach where a cascade function is trained from a lot of positive and negative images. It is then used to detect objects in other images.</i>
+
+![down](https://docs.opencv.org/3.3.0/haar_features.jpg)
+
