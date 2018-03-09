@@ -5,7 +5,7 @@
 
 Here we will work with face detection. Initially, the algorithm needs a lot of positive images (images of faces) and negative images (images without faces) to train the classifier. Then we need to extract features from it. For this, haar features shown in below image are used. They are just like our convolutional kernel. Each feature is a single value obtained by subtracting sum of pixels under white rectangle from sum of pixels under black rectangle.
 
-![down](https://docs.opencv.org/3.3.0/haar_features.jpg)
+![down](http://www.bogotobogo.com/python/OpenCV_Python/images/FaceDetection/xfiles4.png)
 
 Now all possible sizes and locations of each kernel is used to calculate plenty of features. (Just imagine how much computation it needs? Even a 24x24 window results over 160000 features). For each feature calculation, we need to find sum of pixels under white and black rectangles. To solve this, they introduced the integral images. It simplifies calculation of sum of pixels, how large may be the number of pixels, to an operation involving just four pixels. Nice, isn't it? It makes things super-fast.
 
@@ -13,7 +13,7 @@ But among all these features we calculated, most of them are irrelevant. For exa
 
 For this, we apply each and every feature on all the training images. For each feature, it finds the best threshold which will classify the faces to positive and negative. But obviously, there will be errors or misclassifications. We select the features with minimum error rate, which means they are the features that best classifies the face and non-face images. (The process is not as simple as this. Each image is given an equal weight in the beginning. After each classification, weights of misclassified images are increased. Then again same process is done. New error rates are calculated. Also new weights. The process is continued until required accuracy or error rate is achieved or required number of features are found).
 
-![down](https://docs.opencv.org/3.3.0/haar.png)
+![down](http://www.bogotobogo.com/python/OpenCV_Python/images/FaceDetection/HaarFeatures.png)
 
 Final classifier is a weighted sum of these weak classifiers. It is called weak because it alone can't classify the image, but together with others forms a strong classifier. The paper says even 200 features provide detection with 95% accuracy. Their final setup had around 6000 features. (Imagine a reduction from 160000+ features to 6000 features. That is a big gain).
 
@@ -29,7 +29,7 @@ So this is a simple intuitive explanation of how Viola-Jones face detection work
 
 # The awesome Results look like :
 
-![down](https://docs.opencv.org/3.3.0/face.jpg)
+![down](http://www.bogotobogo.com/python/OpenCV_Python/images/FaceDetection/xfiles4.png)
 
 
 
